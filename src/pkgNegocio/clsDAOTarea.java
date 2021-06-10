@@ -34,12 +34,12 @@ public class clsDAOTarea extends clsTarea {
     }
     
     public boolean modificar(){
-        String SQL = "UPDATE administrador.tbl_tarea SET materia='" + super.getMateria() + "' WHERE id_t='" + super.getId_t() + "' WHERE descripcion='" + super.getDescripcion() +"' WHERE d_entrega='" + super.getD_entrega() +"'";
+        String SQL = "UPDATE administrador.tbl_tarea SET descripcion='" + super.getDescripcion() + "' WHERE id_t='" + super.getId_t() +"'";
         return con.procesarSQL(SQL);
     }
     
     public String consultar() {
-        String SQL = "SELECT id_, materia, descripcion, d_entrega FROM administrador.tbl_persona WHERE id_='" + super.getId_t() + "'";
+        String SQL = "SELECT materia, descripcion FROM administrador.tbl_tarea WHERE materia='" + super.getMateria() + "'";
         java.sql.ResultSet hr = null;
         hr = con.consultarSQL(SQL);
         try {
@@ -47,7 +47,7 @@ public class clsDAOTarea extends clsTarea {
                 return hr.getString(2);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(clsDAOPersona.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(clsDAOTarea.class.getName()).log(Level.SEVERE, null, ex);
         }
         return "no";
     }

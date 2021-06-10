@@ -253,14 +253,14 @@ public class frmTarea extends javax.swing.JFrame {
         // TODO add your handling code here:
         pkgNegocio.clsDAOTarea obj;
         obj=new pkgNegocio.clsDAOTarea();
-        obj.setId_t(txtId_t.getText());
+        obj.setMateria(txtMateria.getText());
         
         String resultado=obj.consultar();
         if(resultado.equals("no")){
             JOptionPane.showMessageDialog(rootPane, "No esta");
         }
         else{
-            txtMateria.setText(resultado);
+            txtDescripcion.setText(resultado);           
         }
     }//GEN-LAST:event_btnConsultarActionPerformed
 
