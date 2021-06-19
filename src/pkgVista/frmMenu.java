@@ -31,6 +31,7 @@ public class frmMenu extends javax.swing.JFrame {
         btnCerrar = new javax.swing.JButton();
         btnPersona = new javax.swing.JButton();
         btnTarea = new javax.swing.JButton();
+        btnListaProducto = new javax.swing.JButton();
         menu = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         opcPersona = new javax.swing.JMenuItem();
@@ -59,6 +60,13 @@ public class frmMenu extends javax.swing.JFrame {
             }
         });
 
+        btnListaProducto.setText("Lista Productos");
+        btnListaProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListaProductoActionPerformed(evt);
+            }
+        });
+
         jMenu1.setText("File");
 
         opcPersona.setText("Persona");
@@ -80,23 +88,27 @@ public class frmMenu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(btnPersona)
-                .addGap(29, 29, 29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addComponent(btnTarea)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
-                .addComponent(btnCerrar)
-                .addGap(24, 24, 24))
+                .addGap(43, 43, 43)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnListaProducto)
+                    .addComponent(btnCerrar))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(97, 97, 97)
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCerrar)
-                    .addComponent(btnPersona)
-                    .addComponent(btnTarea))
+                    .addComponent(btnTarea)
+                    .addComponent(btnListaProducto)
+                    .addComponent(btnPersona))
+                .addGap(34, 34, 34)
+                .addComponent(btnCerrar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -140,6 +152,15 @@ public class frmMenu extends javax.swing.JFrame {
         });
     }//GEN-LAST:event_btnTareaActionPerformed
 
+    private void btnListaProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListaProductoActionPerformed
+        // TODO add your handling code here:
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new frmListaProducto().setVisible(true);
+                }
+        });
+    }//GEN-LAST:event_btnListaProductoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -177,6 +198,7 @@ public class frmMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCerrar;
+    private javax.swing.JButton btnListaProducto;
     private javax.swing.JButton btnPersona;
     private javax.swing.JButton btnTarea;
     private javax.swing.JMenu jMenu1;
